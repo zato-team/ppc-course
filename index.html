@@ -123,6 +123,57 @@ h4 { font-size: 1.1rem; }
 
 
 /* ============================================
+   PROMO BANNER (TOP)
+   ============================================ */
+.promo-banner {
+  background: linear-gradient(90deg, var(--orange) 0%, var(--orange-hover) 100%);
+  color: var(--white);
+  padding: 12px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 100;
+}
+
+.promo-banner .promo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0 16px;
+}
+
+.promo-banner strong {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.promo-code {
+  background: rgba(255,255,255,0.2);
+  border: 1px dashed rgba(255,255,255,0.65);
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    font-size: 0.85rem;
+  }
+  .promo-code {
+    font-size: 0.82rem;
+    padding: 2px 9px;
+  }
+}
+
+
+/* ============================================
    SECTION 1: HERO
    ============================================ */
 .hero {
@@ -159,6 +210,24 @@ h4 { font-size: 1.1rem; }
   line-height: 1.8;
 }
 
+.hero-discount-note {
+  margin-top: 18px;
+  font-size: 0.92rem;
+  color: var(--body-text);
+}
+
+.hero-discount-note .code-inline {
+  background: var(--light-gray);
+  border: 1px dashed var(--orange);
+  color: var(--orange);
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.88rem;
+}
+
 .hero-image {
   max-width: 900px;
   margin: 40px auto 0;
@@ -187,6 +256,14 @@ h4 { font-size: 1.1rem; }
   font-size: 2rem;
   font-weight: 700;
   color: var(--dark);
+}
+
+.hero-stat-number .stat-strike {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+  margin-right: 6px;
 }
 
 .hero-stat-label {
@@ -432,6 +509,41 @@ h4 { font-size: 1.1rem; }
 
 
 /* ============================================
+   MID-PAGE DISCOUNT CALLOUT (reusable)
+   ============================================ */
+.discount-callout {
+  background: linear-gradient(135deg, rgba(249,87,56,0.08) 0%, rgba(76,184,197,0.08) 100%);
+  border: 2px dashed var(--orange);
+  border-radius: 12px;
+  padding: 18px 24px;
+  max-width: 620px;
+  margin: 0 auto 24px;
+  text-align: center;
+  font-size: 0.98rem;
+  color: var(--dark);
+}
+
+.discount-callout strong {
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.discount-callout .code-inline {
+  background: var(--white);
+  border: 1px dashed var(--orange);
+  color: var(--orange);
+  padding: 3px 12px;
+  border-radius: 5px;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+
+/* ============================================
    SECTION 5: COMPARISON TABLE
    ============================================ */
 .comparison-section {
@@ -509,6 +621,13 @@ h4 { font-size: 1.1rem; }
 
 .check { color: var(--teal); font-weight: 700; }
 .x-mark { color: #ccc; }
+
+.table-strike {
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+  margin-right: 4px;
+}
 
 
 /* ============================================
@@ -698,23 +817,85 @@ h4 { font-size: 1.1rem; }
   margin-bottom: 8px;
 }
 
+/* Discount badge on pricing card */
+.discount-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 200px;
+  margin: 20px 0 4px;
+  box-shadow: 0 4px 14px rgba(249,87,56,0.3);
+}
+
+.pricing-card .price-strike {
+  display: block;
+  font-size: 1.4rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+  margin-top: 14px;
+  margin-bottom: 2px;
+}
+
 .pricing-card .price {
   font-size: 3.5rem;
   font-weight: 700;
   color: var(--dark);
-  margin: 20px 0 4px;
+  margin: 4px 0 4px;
+  line-height: 1.1;
 }
 
-.pricing-card .price span {
+.pricing-card .price span.price-unit {
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--body-text);
+  display: block;
+  margin-top: 6px;
+}
+
+.pricing-card .price-alt {
+  font-size: 1rem;
+  color: var(--body-text);
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.pricing-card .price-alt .strike-sm {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 4px;
+}
+
+.pricing-card .price-alt strong {
+  color: var(--dark);
+  font-size: 1.15rem;
+}
+
+.pricing-card .code-callout {
+  background: var(--light-gray);
+  border: 1px dashed var(--orange);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 18px 0 10px;
+  font-size: 0.92rem;
+  color: var(--dark);
+}
+
+.pricing-card .code-callout strong {
+  color: var(--orange);
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  letter-spacing: 1.5px;
 }
 
 .pricing-card .price-note {
   font-size: 0.9rem;
   color: var(--body-text);
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .pricing-features {
@@ -823,6 +1004,10 @@ h4 { font-size: 1.1rem; }
     padding: 40px 28px;
   }
 
+  .pricing-card .price {
+    font-size: 2.8rem;
+  }
+
   .testimonial-grid {
     grid-template-columns: 1fr;
   }
@@ -837,6 +1022,18 @@ h4 { font-size: 1.1rem; }
 <body>
 
 <!-- ============================================
+     PROMO BANNER (TOP)
+     ============================================ -->
+<div class="promo-banner">
+  <div class="promo-inner">
+    <span>🎉</span>
+    <span><strong>Limited Time:</strong> Save 25% on the entire course — use code</span>
+    <span class="promo-code">START25</span>
+    <span>at checkout</span>
+  </div>
+</div>
+
+<!-- ============================================
      SECTION 1: HERO
      ============================================ -->
 <section class="hero">
@@ -844,9 +1041,12 @@ h4 { font-size: 1.1rem; }
     <div class="hero-badge">New Course from ZATO</div>
     <h1>From Strategy to Execution: <br><span class="teal">The First Google Ads Course Built for the Busy DTC Operator</span></h1>
     <p class="hero-subtitle">
-      Stop memorizing Google Ads buttons you'll never use. Learn the exact ecommerce Google Ads playbook a 16-year PPC veteran (and his team) deploys for paying agency clients — distilled into minimum viable complexity for maximum profit. 
+      Stop memorizing Google Ads buttons you'll never use. Learn the exact ecommerce Google Ads playbook a 16-year PPC veteran (and his team) deploys for paying agency clients — distilled into minimum viable complexity for maximum profit.
     </p>
     <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Start Learning Now</a>
+    <div class="hero-discount-note">
+      💰 Save 25% today with code <span class="code-inline">START25</span> at checkout
+    </div>
 
     <div class="hero-image">
       <img src="https://cdn.prod.website-files.com/60d4661c9ce3c50788f4b421/69cb3fd442852ab663989ee9_From%20Strategy%20to%20Execution%20PPC%20DTC%20Course%20copy.png" alt="The Ultimate Google Ads Ecommerce Course for DTC Operators by Kirk Williams" loading="eager">
@@ -866,8 +1066,8 @@ h4 { font-size: 1.1rem; }
         <div class="hero-stat-label">Years PPC Expertise</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-number">$599</div>
-        <div class="hero-stat-label">Lifetime Access</div>
+        <div class="hero-stat-number"><span class="stat-strike">$599</span>$449</div>
+        <div class="hero-stat-label">Lifetime Access (25% Off)</div>
       </div>
     </div>
   </div>
@@ -937,10 +1137,11 @@ h4 { font-size: 1.1rem; }
           <li>Frameworks for making smart decisions with limited data</li>
           <li>No "hacks" — just infrastructure that compounds over time</li>
           <li>Satisfaction Guarantee — If you hate the course, you get your money back!</li>
-
-         
         </ul>
         <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Start Learning Today</a>
+        <div class="hero-discount-note" style="text-align:left; margin-top:16px;">
+          💰 Use code <span class="code-inline">START25</span> for 25% off
+        </div>
       </div>
       <div>
         <div class="instructor-card">
@@ -1066,6 +1267,9 @@ h4 { font-size: 1.1rem; }
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
+      <div class="discount-callout">
+        🎉 <strong>25% off today</strong> — use code <span class="code-inline">START25</span> at checkout
+      </div>
       <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Get Full Access</a>
     </div>
   </div>
@@ -1096,7 +1300,10 @@ h4 { font-size: 1.1rem; }
         <tbody>
           <tr>
             <td class="row-label">Cost</td>
-            <td class="highlight">3 Payments of $229, or $599 Lifetime Access</td>
+            <td class="highlight">
+              3 Payments of <span class="table-strike">$229</span><strong>$172</strong>, or <span class="table-strike">$599</span><strong>$449</strong> Lifetime Access<br>
+              <small style="color: var(--orange); font-weight: 700;">with code START25</small>
+            </td>
             <td>$2,000–$10,000+/mo</td>
             <td>$6,000–$9,000+/mo<br><small>(salary + benefits based on expertise)</small></td>
             <td>Your valuable time figuring out what to learn</td>
@@ -1150,7 +1357,10 @@ h4 { font-size: 1.1rem; }
       <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto 28px; color: var(--dark); font-weight: 600;">
         The smartest DTC operators learn first, then hire. This course gives you the knowledge to manage Google Ads yourself now — and to hold any future agency or employee accountable later.
       </p>
-      <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Start for Only 3 Payments of $229</a>
+      <div class="discount-callout">
+        🎉 <strong>Save 25%</strong> with code <span class="code-inline">START25</span> at checkout
+      </div>
+      <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Start for Only 3 Payments of $172</a>
     </div>
   </div>
 </section>
@@ -1295,6 +1505,16 @@ h4 { font-size: 1.1rem; }
 
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
+          Is there a current discount available?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! For a limited time, you can save 25% on the entire course by entering code <strong style="color: var(--orange); font-family: monospace; letter-spacing: 1.2px;">START25</strong> at checkout. That brings the 3-payment option down to <strong>$172/payment</strong> (from $229) and the one-time payment to <strong>$449</strong> (from $599). The discount applies automatically when you enter the code — no gotchas, no expiring free trials, just a straight 25% off.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
           What if I outgrow the course?
           <span class="faq-icon">+</span>
         </button>
@@ -1324,8 +1544,25 @@ h4 { font-size: 1.1rem; }
     <div class="pricing-card">
       <div class="section-label">Full Course Access</div>
       <h2>Start Building Your<br>Google Ads Revenue Engine</h2>
-      <div class="price">$229 <span>for 3 Months (or $599 1-Time)</span></div>
-      <div class="price-note">No Ongoing Subscriptions, Get the Course For Life.</div>
+
+      <div class="discount-badge">🎉 Save 25% with code START25</div>
+
+      <div class="price-strike">$229</div>
+      <div class="price">
+        $172
+        <span class="price-unit">/ month × 3 payments</span>
+      </div>
+
+      <div class="price-alt">
+        or <span class="strike-sm">$599</span> <strong>$449</strong> one-time (lifetime access)
+      </div>
+
+      <div class="code-callout">
+        Enter code <strong>START25</strong> at checkout to apply the 25% discount
+      </div>
+
+      <div class="price-note">No Ongoing Subscriptions — Get the Course For Life.</div>
+
       <ul class="pricing-features">
         <li>31 video lessons across 5 structured modules</li>
         <li>The Ecommerce MAKROZ SMB Google Ads Campaign Playbook</li>
@@ -1334,9 +1571,8 @@ h4 { font-size: 1.1rem; }
         <li>Optimization schedule and ongoing management system</li>
         <li>Bonus lectures added over time</li>
         <li>Satisfaction Guarantee — If you hate the course, you get your money back!</li>
-
       </ul>
-      <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary" style="width: 100%; display: block;">Enroll Now — 3 Payments of $229</a>
+      <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary" style="width: 100%; display: block;">Enroll Now — Apply Code START25</a>
       <p class="pricing-guarantee">
         Less than half a month of agency fees. Far less than wasted ad spend from not knowing what you're doing!
       </p>
@@ -1354,6 +1590,9 @@ h4 { font-size: 1.1rem; }
     <p>
       This course gives you the exact playbook, strategic frameworks, and hands-on setup guides to run profitable Google Ads as a DTC brand operator — without becoming a full-time media buyer.
     </p>
+    <div class="discount-callout">
+      🎉 <strong>Last chance:</strong> Use code <span class="code-inline">START25</span> for 25% off today
+    </div>
     <a href="https://academy.zatomarketing.com/the-ultimate-google-ads-ecommerce-course-for-the-busy-dtc-operator/buy?offer_id=5542596" class="btn btn-primary">Start Learning Now</a>
     <div class="final-cta-instructor">
       <img src="https://cdn.prod.website-files.com/60d4661c9ce3c50788f4b421/69c35a30bdfc931c16fd8b68_Kirk%202025%20Square%20Headshot.png" alt="Kirk Williams" loading="lazy">
