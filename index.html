@@ -670,6 +670,11 @@ h4 { font-size: 1.1rem; }
   padding: 32px;
 }
 
+.testimonial-card.featured {
+  background: rgba(76, 184, 197, 0.12);
+  border: 1px solid rgba(76, 184, 197, 0.35);
+}
+
 .testimonial-card .stars {
   color: #F9C74F;
   font-size: 1rem;
@@ -695,6 +700,21 @@ h4 { font-size: 1.1rem; }
   font-size: 0.8rem;
   color: rgba(255,255,255,0.5);
   margin-top: 2px;
+}
+
+.course-participant-badge {
+  display: inline-block;
+  background: rgba(76, 184, 197, 0.2);
+  border: 1px solid rgba(76, 184, 197, 0.4);
+  color: var(--teal-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 200px;
+  margin-bottom: 14px;
+  display: inline-block;
 }
 
 
@@ -1369,30 +1389,42 @@ h4 { font-size: 1.1rem; }
      ============================================ -->
 <section class="testimonials-section">
   <div class="container">
-    <div class="section-label">Trusted by Brands & Experts</div>
-    <h2>What People Say About Kirk & ZATO</h2>
+    <div class="section-label">Trusted by Brands, Experts & Course Participants</div>
+    <h2>What People Say About Kirk & This Course</h2>
     <p class="testimonials-subtitle">
-      Kirk has been the go-to Google Ads expert for top DTC brands and industry leaders for over a decade.
+      Kirk has been the go-to Google Ads expert for top DTC brands and industry leaders for over a decade — and course participants are seeing the difference.
     </p>
     <div class="testimonial-grid">
+
+      <div class="testimonial-card featured">
+        <div class="course-participant-badge">⭐ Course Participant</div>
+        <div class="stars">★★★★★</div>
+        <blockquote>"Learning the fundamentals can be stressful in an industry filled with noise. Kirk not only goes through the most important elements of Google Ads management but shows you real life application in a clear and easy to understand way. I recommend this course to any busy DTC operator that wants to learn where to focus in Google Ads for the best results."</blockquote>
+        <div class="testimonial-author">Joel H.</div>
+        <div class="testimonial-role">Course Participant</div>
+      </div>
+
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
         <blockquote>"Kirk is my first thought when approached by someone looking for Google Shopping help. He has proven himself over and over to be a humble and helpful resource who is truly the best at what he does."</blockquote>
         <div class="testimonial-author">John Doherty</div>
         <div class="testimonial-role">Founder & CEO, GetCredo.com</div>
       </div>
+
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
         <blockquote>"ZATO gave us the best SEM audit we've gotten from any outside firm. It was insightful, thorough, actionable, and delivered in a clear professional way."</blockquote>
         <div class="testimonial-author">Connor MacDonald</div>
         <div class="testimonial-role">CMO, The Ridge</div>
       </div>
+
       <div class="testimonial-card">
         <div class="stars">★★★★★</div>
         <blockquote>"Kirk possesses the ability to make clear headed analysis of marketing data and turn that analysis into a targeted plan of action based on a customer's targeted audience. His skills in this area has proven to yield substantial ROI. He's a pleasure to work with and has a knack for communicating marketing industry talk in laymen's terms to his co-workers and clients."</blockquote>
         <div class="testimonial-author">Matt Galyon</div>
         <div class="testimonial-role">Manager, Prima Coffee</div>
       </div>
+
     </div>
   </div>
 </section>
